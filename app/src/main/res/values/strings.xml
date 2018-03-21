@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SQLdb</string>
+
+    <string name="id">ID</string>
+    <string name="title">Title</string>
+    <string name="artist">Artist name</string>
+    <string name="year">Year</string>
+    <string name="insert">Insert</string>
+</resources>
