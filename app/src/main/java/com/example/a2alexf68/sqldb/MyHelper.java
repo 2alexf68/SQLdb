@@ -5,6 +5,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
+
+import static com.example.a2alexf68.sqldb.R.string.id;
+
 // dfti2018 belbin
 public class MyHelper extends SQLiteOpenHelper {
 
@@ -47,9 +50,32 @@ public class MyHelper extends SQLiteOpenHelper {
         return id;
     }
 
+    //update
+    public int updateRecord()
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        SQLiteStatement stmt = db.compileStatement
+                ("UPDATE Artists SET Artist=? WHERE Artist=?");
+        stmt.bindString (1, "Jones");
+        stmt.bindString (2, "Smith");
+        int nAffectedRows = stmt.executeUpdateDelete();
+        return nAffectedRows;//the number of rows that was changed after the update
+    }
+
+    //delete
+    public int deleteRecord()
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        SQLiteStatement stmt = db.compileStatement
+                ("DELETE FROM Artists WHERE Artist=?");
+        stmt.bindString (1, "Smith");
+        int nAffectedRows = stmt.executeUpdateDelete();
+        return nAffectedRows;
+    }
+
     public void display()
     {
-        System.out.println("Title: "+ this.title +"Artist: "+ this.artist+ "Year: "+ this.year);
+        System.out.println("ID" +id+ "Title: "+ this.title +"Artist: "+ this.artist+ "Year: "+ this.year);
     }
 
 }

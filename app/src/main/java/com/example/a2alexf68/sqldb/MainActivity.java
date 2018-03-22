@@ -40,15 +40,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view)
     {
         //edit boxes
-        //EditText et1 = (EditText)findViewById(R.id.editText1);
+        EditText et1 = (EditText)findViewById(R.id.editText1);
         EditText et2 = (EditText)findViewById(R.id.editText2);
         EditText et3 = (EditText)findViewById(R.id.editText3);
         EditText et4 = (EditText)findViewById(R.id.editText4);
 
         //get the values from the user
         String title = (et2.getText().toString());
-        String artist = (et2.getText().toString());
-        Long year = Long.parseLong((et2.getText().toString()));
+        String artist = (et3.getText().toString());
+        Long year = Long.parseLong((et4.getText().toString()));
+
+
+        et1.setText(Long.toString(helper.insertRecord(artist,title,year)));
 
     }
 }
