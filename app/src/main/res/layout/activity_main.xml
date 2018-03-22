@@ -5,13 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.a2alexf68.sqldb.MainActivity">
+    //edit box
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="@string/id"/>
 
     <EditText
         android:id="@+id/editText2"
@@ -34,10 +29,29 @@
         android:inputType="number"
         android:hint="@string/year"/>
 
+    //buttons
     <Button
         android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/insert"/>
+        android:text="@string/add"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"/>
 
 </LinearLayout>

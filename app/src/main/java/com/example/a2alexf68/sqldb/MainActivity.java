@@ -1,6 +1,7 @@
 package com.example.a2alexf68.sqldb;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -20,17 +21,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         helper = new MyHelper(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button b = (Button)findViewById(R.id.button1);
-        b.setOnClickListener(this);
+
+        //buttons
+        Button b1 = (Button)findViewById(R.id.button1);
+        b1.setOnClickListener(this);
+
+        Button b2 = (Button)findViewById(R.id.button2);
+        b2.setOnClickListener(this);
+
+        Button b3 = (Button)findViewById(R.id.button3);
+        b3.setOnClickListener(this);
+
+        Button b4 = (Button)findViewById(R.id.button4);
+        b4.setOnClickListener(this);
+
     }
 
     public void onClick(View view)
     {
-        EditText et1 = (EditText)findViewById(R.id.editText1);
+        //edit boxes
+        //EditText et1 = (EditText)findViewById(R.id.editText1);
         EditText et2 = (EditText)findViewById(R.id.editText2);
         EditText et3 = (EditText)findViewById(R.id.editText3);
         EditText et4 = (EditText)findViewById(R.id.editText4);
 
-        //double feet = Double.parseDouble(et1.getText().toString());
+        //get the values from the user
+        String title = (et2.getText().toString());
+        String artist = (et2.getText().toString());
+        Long year = Long.parseLong((et2.getText().toString()));
+
     }
 }

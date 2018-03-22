@@ -5,8 +5,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
-
+// dfti2018 belbin
 public class MyHelper extends SQLiteOpenHelper {
+
+    //declaring the variables
+    private String title,artist;
+    private Long year;
 
     static final int VERSION = 1;
     static final String DATABASE_NAME = "TestDB";
@@ -17,25 +21,35 @@ public class MyHelper extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS People (Id INTEGER PRIMARY KEY, Firstname VARCHAR(255), Lastname VARCHAR(255), Age INTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Artists (ID INTEGER PRIMARY KEY, Title VARCHAR(255), Artist VARCHAR(255), Year INTEGER)");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS People");
+        db.execSQL("DROP TABLE IF EXISTS Artists");
         onCreate(db);
     }
 
     //insert a new statement; a new statement
-    public long insertRecord()
+    public long insertRecord(String artistIn, String titleIn, Long yearIn)
     {
         SQLiteDatabase db = getWritableDatabase();
         SQLiteStatement stmt = db.compileStatement
-                ("INSERT INTO people(Title,Artist,Year) VALUES (?, ?, ?)");
+                ("INSERT INTO Artists(Title,Artist,Year) VALUES (?, ?, ?)");
         stmt.bindString (1, "Tim");
         stmt.bindString (2, "Smith");
         stmt.bindLong (3, 53);
+
+        this.artist = artistIn;
+        this.title = titleIn;
+        this.year = yearIn;
+
         long id = stmt.executeInsert();//it will return the id of the new record
         return id;
+    }
+
+    public void display()
+    {
+        System.out.println("Title: "+ this.title +"Artist: "+ this.artist+ "Year: "+ this.year);
     }
 
 }

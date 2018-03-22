@@ -1,9 +1,16 @@
 <resources>
     <string name="app_name">SQLdb</string>
-
+    // edit box
     <string name="id">ID</string>
     <string name="title">Title</string>
     <string name="artist">Artist name</string>
     <string name="year">Year</string>
-    <string name="insert">Insert</string>
+
+    //buttons
+    <string name="add">Add</string>
+    <string name="search">Search</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+
+
 </resources>
