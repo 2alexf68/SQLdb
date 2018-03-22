@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteStatement;
 
 import static com.example.a2alexf68.sqldb.R.string.id;
 
-// dfti2018 belbin
+// dfti2018 belbin site
 public class MyHelper extends SQLiteOpenHelper {
 
     //declaring the variables
